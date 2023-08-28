@@ -1,10 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
   const addButton = document.querySelector('.add-button');
-  const taskList = document.querySelector('.task-list');
+  const taskList = document.querySelector('.inbox');
 
   addButton.addEventListener('click', function() {
+
     const taskText = prompt('Enter the task:');
-    if (taskText) {
+
+    if (taskText != null) {
       const newTaskDiv = document.createElement('div');
       newTaskDiv.className = 'msg selected-bg anim-y';
       newTaskDiv.innerHTML = `
@@ -17,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=998&q=80" alt="" class="members mail-members">
       `;
       taskList.appendChild(newTaskDiv);
+
     }
   });
 
